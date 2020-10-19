@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/xterm/css/xterm.css">
+        <link rel="stylesheet" href="transterminal.css">
+        <script src="node_modules/xterm/lib/xterm.js"></script>
+        <script src="node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+    </head>
+    <body>
+
+        <div id="terminal"></div>
+        <div id="setup_modal">
+            <p id="title">transterminal</p>
+            <table id="player_table">
+                <tr>
+                    <td><span class="table_right_align">Name</span></td>
+                    <td><input style="width: 60%; height: 30px;" id="player_name"></td>
+                </tr>
+                <tr>
+                    <td><span class="table_right_align">Colour</span></td>
+                    <td><input type="color" id="player_colour"></td>
+                </tr>
+            </table><br>
+            <button id="player_connect" onclick="connect_to_ws_server();">Connect!</button>
+        </div>
+
+        <div id="players">
+            <span style="text-align: center">&nbsp;Current Users</span>
+        </div>
+
+    </body>
+    <script src="transterminal.js"></script>
+</html>

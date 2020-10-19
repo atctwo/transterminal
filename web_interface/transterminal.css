@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#terminal {
+    z-index: 50;
+    width: 100%; 
+    height: 100%; 
+    margin:0;
+}
+
+#setup_overlay {
+    position: absolute;
+    z-index: 100;
+    width: 100%; 
+    height: 100%; 
+    margin:0;
+    background-color: aliceblue;
+}
+
+#title {
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#player_table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table_right_align {
+    margin-right: 0px;
+    margin-left: auto;
+}
+.table_left_align {
+    margin-right: auto;
+    margin-left: 0px;
+}
+
+#player_name {
+    font-size: large;
+    font-family: 'Lato', sans-serif;
+}
+
+#player_connect {
+    font-size: large;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 2px 5px;
+    transition: background-color 0.1s;
+}
+#player_connect:hover {
+    background-color: darkslateblue;
+}
+
+#setup_modal
+{
+    background-color: paleturquoise;
+    border: 2px solid white;
+    border-radius: 50px;
+    min-width: 35%;
+    min-height: 50%;
+    z-index: 150;
+
+    font-size: large;
+    font-family: 'Lato', sans-serif;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    width: 20%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#players
+{
+    background-color: paleturquoise;
+    border: 2px solid white;
+    border-radius: 20px;
+    min-width: 10%;
+    min-height: 15%;
+    z-index: 150;
+
+    font-size: medium;
+    font-family: 'Lato', sans-serif;
+
+
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: none;
+}
+
+/* https://www.w3schools.com/howto/howto_css_circles.asp */
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+.username {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+}
+
+.username_container {
+    margin: 5px;
+}
