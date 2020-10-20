@@ -92,7 +92,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -119,13 +119,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:25.4615px;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.265224"
-       x="47.472099"
-       y="103.4986"
+       x="50.760712"
+       y="105.95548"
        id="text60"
        transform="scale(0.87430189,1.1437697)"><tspan
          sodipodi:role="line"
-         x="47.472099"
-         y="103.4986"
+         x="50.760712"
+         y="105.95548"
          style="font-size:25.4615px;fill:#ffffff;stroke-width:0.265224"
          id="tspan62">&gt;_</tspan></text>
   </g>

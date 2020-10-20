@@ -107,7 +107,14 @@ function connect_to_ws_server()
                 create_username_container(user.name, user.colour);
             });
         }
-        else term.write(event.data);
+        else {
+            //var r = parseInt(event.data.substr(1, 2), 16);
+            //var g = parseInt(event.data.substr(3, 2), 16);
+            //var b = parseInt(event.data.substr(5, 2), 16);
+            //term.write(`\x1b[38;2;${r};${g};${b}m`);
+            term.write(event.data);
+            //term.write("\x1b[0m");
+        }
     };
     ws.onerror = function(event) {
         tt_msg("A WebSocket error occured");
