@@ -24,6 +24,15 @@ The client webpage has to be hosted using a separate HTTP or HTTPS webserver.  W
 
 in theory, one person could host the transterminal server, and each client could locally host their own client webserver.  alternatively, one person can host both servers, which everyone connects to.
 
+## file and directory descriptions
+
+- `extras` contains the transterminal logo in png and svg format
+- `tests` contains the programs i used to test stdin/stdout capture and websocket stuff, and are mainly kept for archive purposes
+- `web_interface` contains all the files needed for the client web interface
+- `readme.md` is this file
+- `transterminal.py` is the main "entrypoint" to the server program.  it just parses command line arguments, then launches the server from `transserver.py`
+- `transserver.py` is the file that contains the actual server code.  all of the parts are wrapped up into one big class called `transterminal`
+
 ## technologies used
 The main server program is a Python script that uses [Pexpect](https://github.com/pexpect/pexpect) to spawn and control a specified process.  The `stdout` of the process is sent using the [websockets](https://github.com/aaugustin/websockets) library, which is also used to receive data that is sent to the processes `stdin`.
 
