@@ -31,7 +31,8 @@
 
         <div id="terminal"></div>
         <div id="setup_modal">
-            <p id="title">transterminal</p>
+            <p id="title" onclick="easteregg();">transterminal</p>
+            <img id="title_gif" src="flaming_logo_60.gif">
             <table id="player_table">
                 <tr>
                     <td><span class="table_right_align">Name</span></td>
@@ -41,8 +42,17 @@
                     <td><span class="table_right_align">Colour</span></td>
                     <td><input type="color" id="player_colour"></td>
                 </tr>
+                <tr class="advanced_setting">
+                    <td><span class="table_right_align">Websocket Port</span></td>
+                    <td><input type="number" value="5678" style="width: 60%; height: 30px;" id="ws_port"></td>
+                </tr>
+                <tr class="advanced_setting">
+                    <td><span class="table_right_align">Host URL</span></td>
+                    <td><input type="url" value="0.0.0.0" style="width: 60%; height: 30px;" id="host_url"></td>
+                </tr>
             </table><br>
-            <button id="player_connect" onclick="connect_to_ws_server();">Connect!</button>
+            <button onclick="show_advanced_settings();">Advanced Settings</button>
+            <button onclick="connect_to_ws_server();">Connect!</button>
         </div>
 
         <div id="players">

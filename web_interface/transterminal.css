@@ -20,8 +20,17 @@ html, body {
 }
 
 #title {
-    font-size: xx-large;
+    font-size: 45pt;
     font-family: 'Courier New', Courier, monospace;
+}
+
+#title_gif {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: none;
 }
 
 #player_table {
@@ -39,12 +48,16 @@ html, body {
     margin-left: 0px;
 }
 
-#player_name {
+#player_name, #ws_port, #host_url {
     font-size: large;
     font-family: 'Lato', sans-serif;
 }
 
-#player_connect {
+.advanced_setting {
+    display: none;
+}
+
+button {
     font-size: large;
     font-family: 'Lato', sans-serif;
     border: 1px solid black;
@@ -53,7 +66,7 @@ html, body {
     padding: 2px 5px;
     transition: background-color 0.1s;
 }
-#player_connect:hover {
+button:hover {
     background-color: darkslateblue;
 }
 

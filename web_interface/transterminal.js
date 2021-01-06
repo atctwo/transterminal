@@ -25,7 +25,7 @@ function tt_msg(msg, newline=true, type=0)
             term.write("\x1b[96m");  // cyan
             break;
         case 1: // server
-            term.write("\x1b[95m");  // cyan
+            term.write("\x1b[95m");  // pink
             break;
     }
     term.write(msg);        // the message to print
@@ -52,6 +52,22 @@ function create_username_container(name, colour)
     document.getElementById("players").appendChild(container_div);
 }
 
+function easteregg()
+{
+    document.getElementById("title").style.display = "none";
+    document.getElementById("title_gif").style.display = "block";
+}
+
+function show_advanced_settings()
+{
+    var settings = document.getElementsByClassName("advanced_setting");
+    for (let element of settings)
+    {
+        if (window.getComputedStyle(element, null).display === "none") element.style.display = "table-row";
+        else element.style.display = "none";
+    };
+}
+
 //----------------------------------------------
 //      set up xterm.js
 //----------------------------------------------
@@ -66,6 +82,9 @@ term.open(document.getElementById("terminal"));
 term_fit.fit();
 
 tt_msg("welcome to transterminal!");
+
+// set up url input field
+document.getElementById("host_url").value = window.location.hostname;
 
 
 
@@ -84,7 +103,9 @@ function connect_to_ws_server()
 
     // connect to ws server
     console.log("setting up websocket");
-    var ws = new WebSocket("ws://192.168.1.68:5678/");
+    var ws_port = document.getElementById("ws_port").value;
+    var host_url = document.getElementById("host_url").value;
+    var ws = new WebSocket(`ws://${host_url}:${ws_port}/`);
 
     ws.onmessage = function (event) {
         

@@ -16,11 +16,12 @@ from pexpect import *
 
 class transterminal:
 
-    def __init__(self, cmd):
+    def __init__(self, cmd, ws_port):
 
         self.connections = []
         self.cmd = cmd
         self.p = None
+        self.ws_port = ws_port
 
     def go(self):
         print("starting child process")
@@ -29,7 +30,7 @@ class transterminal:
         stdout_listener_thread = threading.Thread(target=self.stdout_listener)
         stdout_listener_thread.start()
 
-        self.run_ws_in_loop(asyncio.get_event_loop(), websockets.serve(self.ws_connection_handler, "0.0.0.0", 5678))
+        self.run_ws_in_loop(asyncio.get_event_loop(), websockets.serve(self.ws_connection_handler, "0.0.0.0", self.ws_port))
 
     async def send_user_info(self):
 
